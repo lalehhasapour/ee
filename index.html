@@ -1,25 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Website</title>
+    <title>تبلیغات</title>
     <style>
-        body, html {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        iframe {
+        .ad-container {
             width: 100%;
-            height: 100%;
-            border: none;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .ad-wrapper {
+            margin: 10px 0;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://www.myip.com/" title="My IP Website"></iframe>
+    <div class="ad-container">
+        <div class="ad-wrapper">
+            <div id="ad_unit" data-unit-id="9104"></div>
+            <script src="https://api.fpadserver.com/static/js/advert_renderer.js"></script>
+        </div>
+        <div class="ad-wrapper">
+            <iframe id="banner_advert_wrapper_9103" src="https://api.fpadserver.com/banner?id=9103&size=336x280" width="336px" height="280px" frameborder="0"></iframe>
+        </div>
+        <div class="ad-wrapper">
+            <iframe id="banner_advert_wrapper_9102" src="https://api.fpadserver.com/banner?id=9102&size=468x60" width="468px" height="60px" frameborder="0"></iframe>
+        </div>
+        <div class="ad-wrapper">
+            <iframe id="banner_advert_wrapper_9101" src="https://api.fpadserver.com/banner?id=9101&size=728x90" width="728px" height="90px" frameborder="0"></iframe>
+        </div>
+        <div class="ad-wrapper">
+            <iframe id="banner_advert_wrapper_9100" src="https://api.fpadserver.com/banner?id=9100&size=970x90" width="970px" height="90px" frameborder="0"></iframe>
+        </div>
+        <div class="ad-wrapper">
+            <iframe id="banner_advert_wrapper_9099" src="https://api.fpadserver.com/banner?id=9099&size=970x250" width="970px" height="250px" frameborder="0"></iframe>
+        </div>
+    </div>
 </body>
 </html>
