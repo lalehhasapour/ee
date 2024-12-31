@@ -1,48 +1,174 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تبلیغات</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .ad-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 10px;
-            background: #fff;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .ad-wrapper {
-            margin: 10px 0;
-            text-align: center;
-        }
-    </style>
-        <meta name="monetag" content="70c670f97b133ea32aa92d57ad37f903">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iRANCOiN - صفحه سوآپ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'B Nazanin', sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    .header {
+      text-align: center;
+      margin: 20px 0;
+      color: yellow;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ffd700;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .swap-container {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .swap-title {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      color: #00ffcc;
+    }
+
+    .form-label {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .form-select, .form-control {
+      background: #333;
+      color: white;
+      border: 1px solid #555;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border: none;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      transform: scale(1.05);
+    }
+
+    .amount-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .amount-control button {
+      background: #444;
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      padding: 5px 15px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .amount-control input {
+      width: 80px;
+      text-align: center;
+      font-size: 1.2rem;
+      background: #333;
+      color: white;
+      border: 1px solid #555;
+      border-radius: 5px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <div class="ad-container">
-        <div class="ad-wrapper">
-            <div id="ad_unit" data-unit-id="9104"></div>
-            <script src="https://api.fpadserver.com/static/js/advert_renderer.js"></script>
-        </div>
-        <div class="ad-wrapper">
-            <iframe id="banner_advert_wrapper_9103" src="https://zireemilsoude.net/4/8580907" width="336px" height="280px" frameborder="0"></iframe>
-        </div>
-        <div class="ad-wrapper">
-            <iframe id="banner_advert_wrapper_9102" src="https://zireemilsoude.net/4/8580908" width="468px" height="2800px" frameborder="0"></iframe>
-        </div>
+  <div class="container my-5">
+    <!-- هدر و شعار -->
+    <div class="header">
+      <h1>iRANCOiN</h1>
+      <p>اولین و تنها پلتفرم رسمی ارائه‌ی خدمات بازارهای مالی فارکس، باینری‌آپشن و ارزهای‌دیجیتال در کشور</p>
     </div>
+
+    <!-- بخش سوآپ -->
+    <div class="swap-container mx-auto">
+      <h2 class="swap-title">سوآپ کردن</h2>
+
+      <!-- پرداخت می‌کنید -->
+      <label for="pay-currency" class="form-label">پرداخت می‌کنید:</label>
+      <select id="pay-currency" class="form-select mb-3">
+        <option value="btc">بیت‌کوین (BTC)</option>
+        <option value="eth">اتریوم (ETH)</option>
+        <option value="usdt">تتر (USDT)</option>
+        <option value="rial">ریال (IRR)</option>
+      </select>
+
+      <!-- مقدار -->
+      <div class="amount-control">
+        <button onclick="changeAmount(-1)">-</button>
+        <input type="number" id="pay-amount" class="form-control" value="1" min="0">
+        <button onclick="changeAmount(1)">+</button>
+      </div>
+
+      <!-- دریافت می‌کنید -->
+      <label for="receive-currency" class="form-label">دریافت می‌کنید:</label>
+      <select id="receive-currency" class="form-select mb-3">
+        <option value="btc">بیت‌کوین (BTC)</option>
+        <option value="eth">اتریوم (ETH)</option>
+        <option value="usdt">تتر (USDT)</option>
+        <option value="rial">ریال (IRR)</option>
+      </select>
+
+      <!-- دکمه پرداخت -->
+      <button id="pay-button" class="btn btn-primary w-100">پرداخت</button>
+    </div>
+  </div>
+
+  <!-- فوتر -->
+  <div class="footer">
+    © 2024 iRANCOiN. تمامی حقوق محفوظ است.
+  </div>
+
+  <script>
+    // کنترل مقدار پرداختی
+    function changeAmount(change) {
+      const input = document.getElementById('pay-amount');
+      const currentValue = parseInt(input.value) || 0;
+      if (currentValue + change >= 0) {
+        input.value = currentValue + change;
+      }
+    }
+
+    // دکمه پرداخت
+    document.getElementById('pay-button').addEventListener('click', () => {
+      const payCurrency = document.getElementById('pay-currency').value;
+      const payAmount = document.getElementById('pay-amount').value;
+      const receiveCurrency = document.getElementById('receive-currency').value;
+
+      alert(`پرداخت ${payAmount} ${payCurrency} و دریافت ${receiveCurrency}`);
+    });
+  </script>
 </body>
-</html>
+    </html>
